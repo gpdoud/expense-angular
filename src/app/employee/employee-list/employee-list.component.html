@@ -1,0 +1,30 @@
+<h3>Employee list</h3>
+
+<a routerLink="/empl/create">Create new</a>
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Admin</th>
+            <th>Expenses Due</th>
+            <th>Expenses Paid</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of employees">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.admin ? "Yes" : "No" }}</td>
+            <td>{{ emp.expensesDue | currency}}</td>
+            <td>{{ emp.expensesPaid | currency }}</td>
+            <td>
+                <a routerLink="/empl/detail/{{emp.id}}">Detail</a> |
+                <a routerLink="/empl/edit/{{emp.id}}">Edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
