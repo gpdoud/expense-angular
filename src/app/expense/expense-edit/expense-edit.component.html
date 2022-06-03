@@ -1,0 +1,34 @@
+<app-menu></app-menu>
+<h3>Expense Create</h3>
+
+<table class="table table-sm" *ngIf="expense">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="expense.id" disabled></td>
+        </tr>
+        <tr>
+            <td>Desc</td>
+            <td><input [(ngModel)]="expense.desc"></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input [(ngModel)]="expense.status" disabled></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td><input [(ngModel)]="expense.total" disabled></td>
+        </tr>
+        <tr>
+            <td>Employee</td>
+            <td>
+                <select [(ngModel)]="expense.employeeId">
+                    <option *ngFor="let empl of employees" value="{{ empl.id }}">{{ empl.name }}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>

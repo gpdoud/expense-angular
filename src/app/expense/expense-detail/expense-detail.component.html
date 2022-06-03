@@ -1,0 +1,33 @@
+<app-menu></app-menu>
+<h3>Expense Detail</h3>
+
+<table class="table table-sm" *ngIf="expense">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td>{{ expense.id }}</td>
+        </tr>
+        <tr>
+            <td>Desc</td>
+            <td>{{ expense.desc }}</td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td>{{ expense.status }}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{ expense.total | currency }}</td>
+        </tr>
+        <tr>
+            <td>Employee</td>
+            <td>{{ expense.employee.name }}</td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="remove()" class="btn btn-danger">Delete</button>
+    <span *ngIf="showVerify">
+        | <button (click)="verify()" class="btn btn-danger">Verify Delete</button>
+    </span>
+</div>

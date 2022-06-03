@@ -1,0 +1,32 @@
+<app-menu></app-menu>
+<form>
+    <table class="table">
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <td><input [(ngModel)]="expense.id" disabled name="id"></td>
+            </tr>
+            <tr>
+                <td>Desc</td>
+                <td><input [(ngModel)]="expense.desc"  name="desc"></td>
+            </tr>
+            <tr>
+                <td>Status</td>
+                <td><input [(ngModel)]="expense.status" disabled  name="status"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td><input [(ngModel)]="expense.total" type="number" disabled  name="total"></td>
+            </tr>
+            <tr>
+                <td>Employee</td>
+                <td>
+                    <select [(ngModel)]="expense.employeeId" name="employeeid">
+                        <option *ngFor="let emp of employees" value="{{emp.id}}">{{ emp.name }}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</form>

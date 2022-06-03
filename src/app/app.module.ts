@@ -12,6 +12,11 @@ import { EmployeeCreateComponent } from './employee/employee-create/employee-cre
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
 import { MenuComponent } from './misc/menu/menu/menu.component';
+import { ExpenseListComponent } from './expense/expense-list/expense-list.component';
+import { ExpenseDetailComponent } from './expense/expense-detail/expense-detail.component';
+import { ExpenseCreateComponent } from './expense/expense-create/expense-create.component';
+import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
+import { ExpenseLinesComponent } from './expense/expense-lines/expense-lines.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { MenuComponent } from './misc/menu/menu/menu.component';
     EmployeeCreateComponent,
     EmployeeEditComponent,
     EmployeeLoginComponent,
-    MenuComponent
+    MenuComponent,
+    ExpenseListComponent,
+    ExpenseDetailComponent,
+    ExpenseCreateComponent,
+    ExpenseEditComponent,
+    ExpenseLinesComponent
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule
