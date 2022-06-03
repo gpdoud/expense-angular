@@ -11,6 +11,7 @@ import { EmployeeDetailComponent } from './employee/employee-detail/employee-det
 import { EmployeeCreateComponent } from './employee/employee-create/employee-create.component';
 import { EmployeeEditComponent } from './employee/employee-edit/employee-edit.component';
 import { EmployeeLoginComponent } from './employee/employee-login/employee-login.component';
+import { MenuComponent } from './misc/menu/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmployeeLoginComponent } from './employee/employee-login/employee-login
     EmployeeDetailComponent,
     EmployeeCreateComponent,
     EmployeeEditComponent,
-    EmployeeLoginComponent
+    EmployeeLoginComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule
