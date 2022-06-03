@@ -20,14 +20,18 @@ export class EmployeeLoginComponent implements OnInit {
   ) { }
 
   login(): void {
+    this.message = "";
     this.emplsvc.login(this.email, this.password).subscribe({
       next: (res) => {
         console.debug("Employee", res);
         this.router.navigateByUrl("/empl/list");
       },
       error: (err) => {
-        console.error(err);
-        this.message = "Email and password is invalid!";
+        if(err.status == 404) {
+          this.message = "Email and password is invalid!";
+        } else {
+          console.error(err);
+        }
       }
     });
   }
