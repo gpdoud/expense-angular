@@ -1,0 +1,22 @@
+<app-menu></app-menu>
+<h3>Item Create</h3>
+
+<table class="table table-sm" *ngIf="item">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="item.id" disabled></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input [(ngModel)]="item.name"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input [(ngModel)]="item.price" type="number"></td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>

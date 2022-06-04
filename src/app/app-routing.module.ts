@@ -10,6 +10,10 @@ import { ExpenseDetailComponent } from './expense/expense-detail/expense-detail.
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { ExpenseListComponent } from './expense/expense-list/expense-list.component';
 import { ExpenseLinesComponent } from './expense/expense-lines/expense-lines.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "empl/login", pathMatch: "full" },
@@ -25,6 +29,12 @@ const routes: Routes = [
   { path: "empl/create", component: EmployeeCreateComponent },
   { path: "empl/edit/:id", component: EmployeeEditComponent },
   { path: "empl/login", component: EmployeeLoginComponent },
+
+  { path: "item/list", component: ItemListComponent },
+  { path: "item/detail/:id", component: ItemDetailComponent },
+  { path: "item/create", component: ItemCreateComponent },
+  { path: "item/edit/:id", component: ItemEditComponent },
+
   { path: "**", component: EmployeeListComponent }
 ];
 

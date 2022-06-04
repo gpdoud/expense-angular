@@ -17,6 +17,10 @@ import { ExpenseDetailComponent } from './expense/expense-detail/expense-detail.
 import { ExpenseCreateComponent } from './expense/expense-create/expense-create.component';
 import { ExpenseEditComponent } from './expense/expense-edit/expense-edit.component';
 import { ExpenseLinesComponent } from './expense/expense-lines/expense-lines.component';
+import { ItemListComponent } from './item/item-list/item-list.component';
+import { ItemDetailComponent } from './item/item-detail/item-detail.component';
+import { ItemCreateComponent } from './item/item-create/item-create.component';
+import { ItemEditComponent } from './item/item-edit/item-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +35,11 @@ import { ExpenseLinesComponent } from './expense/expense-lines/expense-lines.com
     ExpenseDetailComponent,
     ExpenseCreateComponent,
     ExpenseEditComponent,
-    ExpenseLinesComponent
+    ExpenseLinesComponent,
+    ItemListComponent,
+    ItemDetailComponent,
+    ItemCreateComponent,
+    ItemEditComponent
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule
