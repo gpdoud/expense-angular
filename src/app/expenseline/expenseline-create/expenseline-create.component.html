@@ -1,1 +1,26 @@
-<p>expenseline-create works!</p>
+<app-menu></app-menu>
+<h3>Expenseline Create</h3>
+
+<table class="table table-sm" *ngIf="expl">
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <td><input [(ngModel)]="expl.id" disabled></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input [(ngModel)]="expl.quantity" type="number"></td>
+        </tr>
+        <tr>
+            <td>Item</td>
+            <td>
+                <select [(ngModel)]="expl.itemId">
+                    <option *ngFor="let item of items" value="{{ item.id }}">{{ item.name }}</option>
+                </select>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div>
+    <button (click)="save()" class="btn btn-primary">Save</button>
+</div>

@@ -20,7 +20,15 @@ export class ExpenseLinesComponent implements OnInit {
   ) { }
 
   submit(): void {
-
+    this.expsvc.review(this.exp).subscribe({
+      next: (res) => {
+        console.debug("Expense:", res);
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   edit(expl: Expenseline): void {
@@ -28,10 +36,18 @@ export class ExpenseLinesComponent implements OnInit {
   }
 
   remove(expl: Expenseline): void {
-
+    this.expsvc.remove(expl.id).subscribe({
+      next: (res) => {
+        console.debug("Expenseline Deleted!");
+        this.refresh();
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
-  ngOnInit(): void {
+  refresh(): void {
     let id: number = +this.route.snapshot.params["id"];
     this.expsvc.get(id).subscribe({
       next: (res) => {
@@ -41,8 +57,13 @@ export class ExpenseLinesComponent implements OnInit {
       error: (err) => {
         console.error(err);
       }
-
+  
     });
+
+  }
+
+  ngOnInit(): void {
+    this.refresh();
   }
 
 }
