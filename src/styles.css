@@ -2,3 +2,9 @@
 input, select {
     border-radius: 7px;
 }
+select {
+    width: 188px;
+}
+button.btn-link {
+    padding: 0;
+}

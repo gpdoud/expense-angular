@@ -28,6 +28,9 @@ import { ItemEditComponent } from './item/item-edit/item-edit.component';
 
 import { ExpenselineCreateComponent } from './expenseline/expenseline-create/expenseline-create.component';
 import { ExpenselineEditComponent } from './expenseline/expenseline-edit/expenseline-edit.component';
+import { ExpensePayListComponent } from './expense/expense-pay-list/expense-pay-list.component';
+import { ExpenseReviewListComponent } from './expense/expense-review-list/expense-review-list.component';
+import { ExpenseReviewItemComponent } from './expense/expense-review-item/expense-review-item.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +51,10 @@ import { ExpenselineEditComponent } from './expenseline/expenseline-edit/expense
     ItemCreateComponent,
     ItemEditComponent,
     ExpenselineCreateComponent,
-    ExpenselineEditComponent
+    ExpenselineEditComponent,
+    ExpensePayListComponent,
+    ExpenseReviewListComponent,
+    ExpenseReviewItemComponent
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule

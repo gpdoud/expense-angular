@@ -16,6 +16,9 @@ import { ItemEditComponent } from './item/item-edit/item-edit.component';
 import { ItemListComponent } from './item/item-list/item-list.component';
 import { ExpenselineCreateComponent } from './expenseline/expenseline-create/expenseline-create.component';
 import { ExpenselineEditComponent } from './expenseline/expenseline-edit/expenseline-edit.component';
+import { ExpensePayListComponent } from './expense/expense-pay-list/expense-pay-list.component';
+import { ExpenseReviewItemComponent } from './expense/expense-review-item/expense-review-item.component';
+import { ExpenseReviewListComponent } from './expense/expense-review-list/expense-review-list.component';
 
 const routes: Routes = [
   { path: "", redirectTo: "empl/login", pathMatch: "full" },
@@ -26,6 +29,9 @@ const routes: Routes = [
   { path: "exp/edit/:id", component: ExpenseEditComponent },
   { path: "exp/lines/:id", component: ExpenseLinesComponent },
   { path: "exp/detail/:id", component: ExpenseDetailComponent },
+  { path: "exp/list/pay", component: ExpensePayListComponent },
+  { path: "exp/review", component: ExpenseReviewListComponent },
+  { path: "exp/review/:id", component: ExpenseReviewItemComponent },
 
   { path: "expl/create/:eid", component: ExpenselineCreateComponent },
   { path: "expl/edit/:id", component: ExpenselineEditComponent },
