@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Expenseline } from 'src/app/expenseline/expenseline.class';
 import { Expense } from '../expense.class';
 import { ExpenseService } from '../expense.service';
@@ -15,7 +15,8 @@ export class ExpenseLinesComponent implements OnInit {
   
   constructor(
     private expsvc: ExpenseService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   submit(): void {
@@ -23,7 +24,7 @@ export class ExpenseLinesComponent implements OnInit {
   }
 
   edit(expl: Expenseline): void {
-
+    this.router.navigateByUrl(`/expl/edit/${expl.id}`);
   }
 
   remove(expl: Expenseline): void {

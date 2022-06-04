@@ -21,6 +21,8 @@ import { ItemListComponent } from './item/item-list/item-list.component';
 import { ItemDetailComponent } from './item/item-detail/item-detail.component';
 import { ItemCreateComponent } from './item/item-create/item-create.component';
 import { ItemEditComponent } from './item/item-edit/item-edit.component';
+import { ExpenselineCreateComponent } from './expenseline/expenseline-create/expenseline-create.component';
+import { ExpenselineEditComponent } from './expenseline/expenseline-edit/expenseline-edit.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,9 @@ import { ItemEditComponent } from './item/item-edit/item-edit.component';
     ItemListComponent,
     ItemDetailComponent,
     ItemCreateComponent,
-    ItemEditComponent
+    ItemEditComponent,
+    ExpenselineCreateComponent,
+    ExpenselineEditComponent
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule
