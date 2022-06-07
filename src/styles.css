@@ -7,4 +7,5 @@ select {
 }
 button.btn-link {
     padding: 0;
+    margin-bottom: 5px;
 }

@@ -1,20 +1,21 @@
 <app-menu></app-menu>
 <h3>Expense list</h3>
 
-<a routerLink="/exp/create">Create new</a>
+<a routerLink="/exp/create">Create new</a> | 
+<input [(ngModel)]="searchCriteria" placeholder="Search">
 <table class="table table-striped table-sm">
     <thead>
         <tr>
-            <th>Id</th>
-            <th>Desc</th>
-            <th>Status</th>
-            <th>Total</th>
-            <th>Employee</th>
+            <th><button (click)="sortFn('id')" class="btn btn-link">Id</button></th>
+            <th><button (click)="sortFn('desc')" class="btn btn-link">Desc</button></th>
+            <th><button (click)="sortFn('status')" class="btn btn-link">Status</button></th>
+            <th><button (click)="sortFn('total')" class="btn btn-link">Total</button></th>
+            <th><button (click)="sortFn('employeeName')" class="btn btn-link">Employee</button></th>
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let exp of expenses">
+    <tbody *ngIf="expenses">
+        <tr *ngFor="let exp of expenses | expenseSearch:searchCriteria | sort:sortColumn:sortAsc">
             <td>{{ exp.id }}</td>
             <td>{{ exp.desc }}</td>
             <td>{{ exp.status }}</td>

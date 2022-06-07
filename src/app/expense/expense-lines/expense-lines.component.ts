@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Expenseline } from 'src/app/expenseline/expenseline.class';
+import { ExpenselineService } from 'src/app/expenseline/expenseline.service';
 import { Expense } from '../expense.class';
 import { ExpenseService } from '../expense.service';
 
@@ -15,6 +16,7 @@ export class ExpenseLinesComponent implements OnInit {
   
   constructor(
     private expsvc: ExpenseService,
+    private explsvc: ExpenselineService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -36,7 +38,7 @@ export class ExpenseLinesComponent implements OnInit {
   }
 
   remove(expl: Expenseline): void {
-    this.expsvc.remove(expl.id).subscribe({
+    this.explsvc.remove(expl.id).subscribe({
       next: (res) => {
         console.debug("Expenseline Deleted!");
         this.refresh();

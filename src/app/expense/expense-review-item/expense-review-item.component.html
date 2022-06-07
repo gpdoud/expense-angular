@@ -1,1 +1,50 @@
-<p>expense-review-item works!</p>
+<app-menu></app-menu>
+<h3>Expense Review</h3>
+<h4>Expense</h4>
+<table class="table table-sm" *ngIf="exp">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Desc</th>
+            <th>Status</th>
+            <th>Total</th>
+            <th>Employee</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>{{ exp.id }}</td>
+            <td>{{ exp.desc }}</td>
+            <td class="fw-bold">{{ exp.status }}</td>
+            <td>{{ exp.total | currency}}</td>
+            <td>{{ exp.employee.name }}</td>
+            <td>
+                <button (click)="approve(exp)" class="btn btn-link text-success">Approve</button> |
+                <button (click)="reject(exp)" class="btn btn-link text-danger">Reject</button>
+
+            </td>
+        </tr>
+    </tbody>
+</table>
+<h4>Expenselines</h4>
+<table class="table table-striped table-sm">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Item</td>
+            <td>Price</td>
+            <td>Quantity</td>
+            <td>Line total</td>
+        </tr>
+    </thead>
+    <tbody *ngIf="exp && exp.expenselines">
+        <tr *ngFor="let el of exp.expenselines">
+            <td>{{ el.id }}</td>
+            <td>{{ el.item.name }}</td>
+            <td>{{ el.item.price | currency }}</td>
+            <td>{{ el.quantity }}</td>
+            <td>{{ el.quantity * el.item.price | currency }}</td>
+        </tr>
+    </tbody>
+</table>

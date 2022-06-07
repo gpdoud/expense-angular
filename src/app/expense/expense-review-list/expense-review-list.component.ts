@@ -15,17 +15,7 @@ export class ExpenseReviewListComponent implements OnInit {
     private expsvc: ExpenseService
   ) { }
 
-  approve(exp: Expense): void {
-    this.expsvc.approve(exp).subscribe({
-      next: (res) => {
-        console.debug(`Expense id:${exp.id} approved!`);
-        this.expenses = res;
-      },
-      error: (err) => {
-        console.error(err);
-      }      
-    });
-  }
+
 
   refresh(): void {
     this.expsvc.getReviewed().subscribe({

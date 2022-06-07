@@ -19,7 +19,7 @@ export class ExpensePayListComponent implements OnInit {
     this.expsvc.payExpense(exp.id).subscribe({
       next: (res) => {
         console.debug(`Expense id:${exp.id} paid!`);
-        this.expenses = res;
+        this.refresh()
       },
       error: (err) => {
         console.error(err);

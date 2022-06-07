@@ -11,4 +11,6 @@ export class Expense {
     employee!: Employee;
 
     expenselines!: Expenseline[];
+
+    employeeName: string = "";
 }

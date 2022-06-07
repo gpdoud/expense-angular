@@ -31,6 +31,10 @@ import { ExpenselineEditComponent } from './expenseline/expenseline-edit/expense
 import { ExpensePayListComponent } from './expense/expense-pay-list/expense-pay-list.component';
 import { ExpenseReviewListComponent } from './expense/expense-review-list/expense-review-list.component';
 import { ExpenseReviewItemComponent } from './expense/expense-review-item/expense-review-item.component';
+import { BoolDisplayPipe } from './misc/bool-display.pipe';
+import { EmployeeSearchPipe } from './misc/employee-search.pipe';
+import { ExpenseSearchPipe } from './misc/expense-search.pipe';
+import { SortPipe } from './misc/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -54,7 +58,11 @@ import { ExpenseReviewItemComponent } from './expense/expense-review-item/expens
     ExpenselineEditComponent,
     ExpensePayListComponent,
     ExpenseReviewListComponent,
-    ExpenseReviewItemComponent
+    ExpenseReviewItemComponent,
+    BoolDisplayPipe,
+    EmployeeSearchPipe,
+    ExpenseSearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule, RouterModule, FormsModule, HttpClientModule, AppRoutingModule

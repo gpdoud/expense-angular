@@ -1,7 +1,8 @@
 <app-menu></app-menu>
 <h3>Employee list</h3>
 
-<a routerLink="/empl/create">Create new</a>
+<a routerLink="/empl/create">Create new</a> | 
+<input [(ngModel)]="searchCriteria" placeholder="Search">
 <table class="table table-striped table-sm">
     <thead>
         <tr>
@@ -14,17 +15,18 @@
             <th>Actions</th>
         </tr>
     </thead>
-    <tbody>
-        <tr *ngFor="let emp of employees">
+    <tbody *ngIf="employees">
+        <tr *ngFor="let emp of employees | employeeSearch:searchCriteria ">
             <td>{{ emp.id }}</td>
             <td>{{ emp.name }}</td>
             <td>{{ emp.email }}</td>
-            <td>{{ emp.admin ? "Yes" : "No" }}</td>
+            <td>{{ emp.admin | bool}}</td>
             <td>{{ emp.expensesDue | currency}}</td>
             <td>{{ emp.expensesPaid | currency }}</td>
             <td>
                 <a routerLink="/empl/detail/{{emp.id}}">Detail</a> |
-                <a routerLink="/empl/edit/{{emp.id}}">Edit</a>
+                <a routerLink="/empl/edit/{{emp.id}}">Edit</a> |
+                <button (click)="reset(emp)" class="btn btn-link">Reset</button>
             </td>
         </tr>
     </tbody>
